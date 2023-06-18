@@ -1,0 +1,29 @@
+[33mcommit cbc9c07d1e38f4d4dc872df7f1445ef531f70be4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jan Bogosyan <janbogosyan@gmail.com>
+Date:   Sun Jun 18 11:02:32 2023 +0300
+
+    Adding Individual Meal Items and Displaying Them
+
+[33mcommit 5018e53f6403194c259cf4c16977255eb0592783[m
+Author: Jan Bogosyan <janbogosyan@gmail.com>
+Date:   Sun Jun 18 10:29:29 2023 +0300
+
+    Adding components in Meals folder (js and css)
+
+[33mcommit d1e41d449073c0ca05eca053dd6122f2ad479614[m
+Author: Jan Bogosyan <janbogosyan@gmail.com>
+Date:   Sat Jun 17 11:55:16 2023 +0300
+
+    Adding HeaderCartButton js & css and Header.js all in Layout folder
+
+[33mcommit eaf0406e49451ef9e46cd06ad5b30cfc784015e4[m
+Author: Jan Bogosyan <janbogosyan@gmail.com>
+Date:   Sat Jun 17 11:26:16 2023 +0300
+
+    Writing the Header.js Header.module.css
+
+[33mcommit 4aac451fa4f641642ae3fa4a6cdec78bafd089e2[m
+Author: Jan Bogosyan <janbogosyan@gmail.com>
+Date:   Sat Jun 17 11:06:56 2023 +0300
+
+    Start up
