@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 import classes from './Modal.module.css';
 
 
-const Backdrop = props => {
-    return <div className={classes.backdrop} onClick={props.onCloseCartModal} />
-};
+const portalElement = document.getElementById('overlays')         //public folder -> index.html над id='root'
 
 const ModalOverlay = props => {
     return (
@@ -16,13 +14,16 @@ const ModalOverlay = props => {
     );
 };
 
-const portalElement = document.getElementById('overlays')
+const Backdrop = props => {
+    return <div className={classes.backdrop} onClick={props.onCloseCartModal} />
+};
+
 
 const Modal = props => {
     return (
         <Fragment>
-            {ReactDOM.createPortal(<Backdrop onCloseCartModal={props.onCloseCartModal} />, portalElement)}
             {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, portalElement)}
+            {ReactDOM.createPortal(<Backdrop onCloseCartModal={props.onCloseCartModal} />, portalElement)}
         </Fragment>
     );
 };
