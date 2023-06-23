@@ -1,4 +1,4 @@
-import { useReducer } from "react";    //can be used useState
+import { useReducer } from "react";    //useReducer is similar to UseState but for more complex logic
 
 import CartContext from "./cart-context";
 
