@@ -4,11 +4,12 @@ import Card from '../UI/Card';
 import classes from './AvailableMeals.module.css';
 import MealItem from './MealItem/MealItem';
 
-//
 
 const AvailableMeals = () => {
     const [meals, setMeals] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
+    //useEffect който по този начин записан не е async/await и не връща promis
     useEffect(() => {
         const fetchMeals = async () => {
             const response = await fetch('https://react-http-5ae50-default-rtdb.europe-west1.firebasedatabase.app/meals.json');
@@ -25,10 +26,18 @@ const AvailableMeals = () => {
                 });
             }
             setMeals(loadedMeals);
+            setIsLoading(false);
         };
-        fetchMeals();
+        fetchMeals(); //и тука извикваме нашия fetchMeals който не е async/await ,но се намира вътре в useEffect
     }, []);
 
+    if (isLoading) {
+        return (
+            <section className={classes.MealsLoading}>
+                <p>Loading...</p>
+            </section>
+        );
+    }
 
     const mealsList = meals.map(meal =>
         <MealItem
