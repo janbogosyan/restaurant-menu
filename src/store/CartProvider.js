@@ -1,15 +1,13 @@
 
 import { useReducer } from 'react';
-
 import CartContext from './cart-context';
 
 const defaultCartState = {
     items: [],
     totalAmount: 0,
 };
-//cartReducer outside of the component bcs dont need to use any data from this component & shouldnt been recreated all the time when the component is reevaluated
-//state,action are received automatic by react/ state is simply the last state snapshot of the state managed by the reducer/ action is dispatched by you later in your code
 
+//cartReducer outside of the component bcs dont need to use any data from this component & shouldnt been recreated all the time when the component is reevaluate
 const cartReducer = (state, action) => {
   if (action.type === 'ADD') {
     const updatedTotalAmount =
@@ -61,11 +59,9 @@ const cartReducer = (state, action) => {
   return defaultCartState;
 };
 
+
 const CartProvider = (props) => {
-  const [cartState, dispatchCartAction] = useReducer(
-    cartReducer,
-    defaultCartState
-  );
+  const [cartState, dispatchCartAction] = useReducer( cartReducer,defaultCartState);
 
   const addItemToCartHandler = (item) => {
     dispatchCartAction({ type: 'ADD', item: item });
@@ -82,6 +78,7 @@ const CartProvider = (props) => {
     removeItem: removeItemFromCartHandler,
   };
 
+//взимаме нашия CartContext.Provider от cart-context.js там сме му задали празни стойности и логика и чрез value={cartContext} ние ъпдейтваме тези празни стойности
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
